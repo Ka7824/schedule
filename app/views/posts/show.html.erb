@@ -1,0 +1,27 @@
+<%= link_to "一覧に戻る", :posts %>
+<button><%=link_to "編集", :edit_post %></button>
+
+<h3><%= @post.title %></h3>
+<%= form_with model: @post do |f| %>
+  <table>
+    <tr>
+      <th>開始日</th>
+      <td><%= @post.start_datetime%></td>
+    </tr>
+
+    <tr>
+      <th>終了日</th>
+      <td><%= @post.end_datetime %></td>
+    </tr>
+
+    <tr>
+      <th>終日</th>
+      <td><%= @post.is_all_day ? "◯" : "" %></td>
+    </tr>
+
+    <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @post.memo %></td>
+    </tr>
+  </table>
+<% end %>
